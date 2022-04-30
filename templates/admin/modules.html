@@ -44,7 +44,7 @@
     $(document).ready(function() {
         $('#module_list').DataTable({
             columnDefs: [
-                {orderable: false, targets: 4}
+                {orderable: false, targets: [3, 4]}
             ],
             "order": [[0, "asc"]],
             "paging": false,
