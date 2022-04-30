@@ -73,7 +73,11 @@
 
         $(document).ready(function() {
             $('#banphrase_list').DataTable({
-                "order": [[0, "asc"]]
+                columnDefs: [
+                    {orderable: false, targets: 6}
+                ],
+                "order": [[0, "asc"]],
+                "autoWidth": false
             });
         });
     </script>
