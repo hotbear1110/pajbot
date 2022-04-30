@@ -7,7 +7,7 @@
         </button>
     </form>
     <h2>Banphrases</h2>
-    <table class="display order-column" id="module_list">
+    <table class="display order-column" id="banphrase_list">
         <thead>
         <tr>
             <th class="collapsing">ID</th>
@@ -69,6 +69,10 @@
             enable_edit_row('banphrases');
             enable_remove_row('remove-banphrase', 'remove_banphrase');
             enable_toggle_row_cb('toggle_banphrase');
+        });
+
+        $(document).ready(function() {
+            $('#banphrase_list').DataTable();
         });
     </script>
 {% endblock %}
