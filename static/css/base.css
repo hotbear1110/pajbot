@@ -530,3 +530,7 @@ img.emote {
     max-height: 64px;
     border-radius: 0.28571429rem;
 }
+
+th {
+    text-align: left;
+}
