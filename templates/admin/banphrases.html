@@ -10,14 +10,14 @@
     <table class="display order-column" id="banphrase_list">
         <thead>
         <tr>
-            <th class="collapsing">ID</th>
-            <th class="collapsing">Name</th>
+            <th>ID</th>
+            <th>Name</th>
             <th>Phrase</th>
-            <th class="collapsing"></th>
-            <th class="collapsing">#&nbsp;uses</th>
-            <th class="collapsing">Notify</th>
-            <th class="collapsing">Enabled</th>
-            <th class="collapsing">Actions</th>
+            <th></th>
+            <th>#&nbsp;uses</th>
+            <th>Notify</th>
+            <th>Enabled</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -73,8 +73,7 @@
 
         $(document).ready(function() {
             $('#banphrase_list').DataTable({
-                "order": [[0, "asc"]],
-                "autoWidth": false
+                "order": [[0, "asc"]]
             });
         });
     </script>
