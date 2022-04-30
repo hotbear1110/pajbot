@@ -72,7 +72,10 @@
         });
 
         $(document).ready(function() {
-            $('#banphrase_list').DataTable();
+            $('#banphrase_list').DataTable({
+                "order": [[0, "asc"]],
+                "autoWidth": false
+            });
         });
     </script>
 {% endblock %}
