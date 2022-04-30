@@ -534,3 +534,7 @@ img.emote {
 th {
     text-align: left;
 }
+
+div.modules {
+    width: 80%;
+}
