@@ -39,10 +39,18 @@
         </thead>
         <tbody>
         {% for command in custom_commands %}
-        <tr data-id="{{command.id}}" data-enabled="{{1 if command.enabled else 0}}">
+        <tr data-id="{{command.id}}">
             <td><div class="anchor" id="c{{command.id}}"></div>{% include 'helper/command_usage_nolink.html' %}</td>
             <td class="description autolink">{{ command.parsed_description }}</td>
             <td>{{ command.data.num_uses }}</td>
+            <td class="right aligned collapsing">
+                {% if not command.raw_command %}
+                    <div class="ui toggle checkbox">
+                        <input data-id="{{command.id}}" type="checkbox" name="public" {{ 'checked="checked"' if command.enabled else '' }}>
+                        <label></label>
+                    </div>
+                {% endif %}
+            </td>
             {% include 'admin/helper/command_action.html' %}
         </tr>
         <tr data-id="{{command.id}}">
@@ -61,6 +69,7 @@
                 <th>Cost</th>
                 <th>Description</th>
                 <th>#&nbsp;uses</th>
+                <th>Enabled</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -71,6 +80,14 @@
         <td class="collapsing">{{ command.cost }}</td>
         <td class="description autolink">{{ command.parsed_description }}</td>
         <td>{{ command.data.num_uses }}</td>
+        <td class="right aligned collapsing">
+            {% if not command.raw_command %}
+                <div class="ui toggle checkbox">
+                    <input data-id="{{command.id}}" type="checkbox" name="public" {{ 'checked="checked"' if command.enabled else '' }}>
+                    <label></label>
+                </div>
+            {% endif %}
+        </td>
         {% include 'admin/helper/command_action.html' %}
         </tr>
         <tr data-id="{{command.id}}">
@@ -89,6 +106,7 @@
                 <th>Command</th>
                 <th>Description</th>
                 <th>#&nbsp;uses</th>
+                <th>Enabled</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -98,6 +116,14 @@
         <td class="collapsing"><div class="anchor" id="c{{command.id}}"></div>{% include 'helper/command_usage_nolink.html' %}</td>
         <td class="description autolink">{{ command.parsed_description }}</td>
         <td>{{ command.data.num_uses }}</td>
+        <td class="right aligned collapsing">
+            {% if not command.raw_command %}
+                <div class="ui toggle checkbox">
+                    <input data-id="{{command.id}}" type="checkbox" name="public" {{ 'checked="checked"' if command.enabled else '' }}>
+                    <label></label>
+                </div>
+            {% endif %}
+        </td>
         {% include 'admin/helper/command_action.html' %}
         </tr>
         <tr data-id="{{command.id}}">
