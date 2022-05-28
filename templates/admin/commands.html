@@ -39,7 +39,7 @@
         </thead>
         <tbody>
         {% for command in custom_commands %}
-        <tr data-id="{{command.id}}">
+        <tr data-id="{{command.id}}" data-enabled="{{1 if command.enabled else 0}}">
             <td><div class="anchor" id="c{{command.id}}"></div>{% include 'helper/command_usage_nolink.html' %}</td>
             <td class="description autolink">{{ command.parsed_description }}</td>
             <td>{{ command.data.num_uses }}</td>
@@ -75,7 +75,7 @@
         </thead>
         <tbody>
         {% for command in point_commands %}
-        <tr data-id="{{command.id}}">
+        <tr data-id="{{command.id}}" data-enabled="{{1 if command.enabled else 0}}">
         <td class="collapsing"><div class="anchor" id="c{{command.id}}"></div>{% include 'helper/command_usage_nolink.html' %}</td>
         <td class="collapsing">{{ command.cost }}</td>
         <td class="description autolink">{{ command.parsed_description }}</td>
@@ -112,7 +112,7 @@
         </thead>
         <tbody>
         {% for command in moderator_commands %}
-        <tr data-id="{{command.id}}">
+        <tr data-id="{{command.id}}" data-enabled="{{1 if command.enabled else 0}}">
         <td class="collapsing"><div class="anchor" id="c{{command.id}}"></div>{% include 'helper/command_usage_nolink.html' %}</td>
         <td class="description autolink">{{ command.parsed_description }}</td>
         <td>{{ command.data.num_uses }}</td>
